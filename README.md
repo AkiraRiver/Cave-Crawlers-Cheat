@@ -5,6 +5,7 @@
 
   <p align="center">
     Written in Unity Mono code and with the MelonLoader API
+    Discord : https://discord.gg/jNzGdxx3ES
     <br/>
     <br/>
   </p>
