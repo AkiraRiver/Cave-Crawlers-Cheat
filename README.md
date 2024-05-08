@@ -1,3 +1,4 @@
+![Downloads](https://img.shields.io/github/downloads/AkiraRiver/Cave-Crawlers-Cheat/total) ![Contributors](https://img.shields.io/github/contributors/AkiraRiver/Cave-Crawlers-Cheat?color=dark-green) ![Issues](https://img.shields.io/github/issues/AkiraRiver/Cave-Crawlers-Cheat) ![License](https://img.shields.io/github/license/AkiraRiver/Cave-Crawlers-Cheat) 
 # Cave-Crawlers-Cheat
 <br/>
 <p align="center">
