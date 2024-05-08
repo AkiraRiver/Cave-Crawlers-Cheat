@@ -12,6 +12,7 @@
   </p>
 </p>
 
+![image](https://github.com/AkiraRiver/Cave-Crawlers-Cheat/blob/main/assets/1.png)
 ### Installation
 
 1. Download MelonLoader [https://github.com/LavaGang/MelonLoader](https://github.com/LavaGang/MelonLoader)      
