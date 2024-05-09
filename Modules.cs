@@ -6,12 +6,15 @@ namespace CaveDestroyer
 {
     public static class Modules
     {
-        public static bool infHeal = false, infJump = false;
+        public static bool infHeal = false, infJump = false, addOneHealth = false;
+        public static bool teamESP = false, itemESP = false, mobESP = false;
         public static bool reach = false;
         public static float speed = 1.5f;
         public static float jumpHeight = 1f;
         private static float timeSinceLastUpdate = 0.0f;
         private static float updateInterval2 = 1f;
+        private static float delay = 0f;
+        private static float jumpDelay = 0.2f;
         public static bool firsttime = true;
         public static bool firsttimejump = true;
         public static bool addTalentPoints = false;
@@ -21,6 +24,7 @@ namespace CaveDestroyer
         public static string playerName = "None";
         public static void RunModules()
         {
+            ESP.Update();
             if (timeSinceLastUpdate >= updateInterval2)
             {
                 players = GameObject.FindObjectsOfType<Player>();
@@ -46,12 +50,48 @@ namespace CaveDestroyer
                     }
                 }
             }
-            if(infJump)
+            if(addOneHealth)
+            {
+                if (players == null)
+                {
+                    MelonLogger.Log("No players found!");
+                    return;
+                }
+                // Parcourir chaque Player
+                foreach (Player player in players)
+                {
+                    if (playerName == "None" || playerName == player.name)
+                    {
+                        // Vérifier si le Player a une PlayerHealthBar
+                        player.hitPoints += 1;
+                    }
+                }
+                addOneHealth = false;
+            }   
+            if (infJump)
             {
                 foreach (Player player in players)
                 {
                     if (playerName == "None" || playerName == player.name)
-                        player.jumpCoolDown = 0f;
+                    {
+                        
+                        delay += Time.deltaTime;
+                        
+                        if (Input.GetKey(KeyCode.Space)  && player.IsMidAir && !player.IsGrounded)
+                        {
+                            if (delay >= jumpDelay && player.jumpCoolDown == 0f)
+                            {
+                                player.JumpRPC();
+                                delay = 0f;
+                                player.IsMidAir = true;
+                                
+
+                            }
+                            player.jumpCoolDown = 0f;
+
+                        }
+                    }
+                       
                 }
                 firsttimejump = true;
             }
