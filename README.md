@@ -5,7 +5,7 @@
   <h3 align="center">Cave Crawlers Cheat</h3>
 
   <p align="center">
-    Written in Unity Mono code and with the MelonLoader API
+    Written in Unity IL2CPP code and with the MelonLoader API
     <br/>
     Discord : https://discord.gg/jNzGdxx3ES
     <br/>
